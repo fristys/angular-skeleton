@@ -40,6 +40,9 @@
         resolve : fetch(['app/modules/index/indexController.js'])
       })
       .otherwise({ redirectTo : '/' });
+
+    // Clean URLs for the non-peasants
+    $locationProvider.html5Mode(true);
   })
   // App runtime definitions
   .run(function ($rootScope, $http, $location) {
